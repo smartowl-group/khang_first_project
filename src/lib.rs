@@ -15,7 +15,7 @@ pub fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
 }
 
 async fn health_check() -> HttpResponse {
-    HttpResponse::Ok().finish()
+    HttpResponse::Ok().body("Health check is good")
 }
 
 async fn greet(req: HttpRequest) -> impl Responder {
